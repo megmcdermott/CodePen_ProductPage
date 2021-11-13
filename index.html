@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<head>
+  <title>Cat Tree Product Landing Page</title>
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+  />
+</head>
+<style>
+    @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Lato', sans-serif;
+}
+#page-wrapper {
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 0 20px;
+  height: 40px;
+  font-size: 1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 3px black solid;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.grid {
+  display: flex;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  min-height: 60px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+.logo {
+  width: 60vw;
+}
+
+@media (max-width: 650px) {
+  .logo {
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.logo > img {
+  width: 100%;
+  height: 100%;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 20px;
+}
+
+@media (max-width: 650px) {
+  .logo > img {
+    margin: 0 auto;
+  }
+}
+
+nav {
+  font-weight: 400;
+}
+
+@media (max-width: 650px) {
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px;
+  }
+  nav li {
+    padding-bottom: 5px;
+  }
+}
+
+nav > ul {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media (max-width: 650px) {
+  nav > ul {
+    flex-direction: column;
+  }
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+  margin-top: 50px;
+}
+
+#hero > h2 {
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+#hero input[type='email'] {
+  max-width: 275px;
+  width: 100%;
+  padding: 5px;
+}
+
+#hero input[type='submit'] {
+  max-width: 150px;
+  width: 100%;
+  height: 30px;
+  margin: 15px 0;
+  border: 0;
+  background-color: #f1c40f;
+}
+
+#hero input[type='submit']:hover {
+  background-color: #24BF31;
+  transition: background-color 1s;
+}
+
+@media (max-width: 650px) {
+  #hero {
+    margin-top: 120px;
+  }
+}
+
+#features {
+  margin-top: 30px;
+}
+
+#features .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 125px;
+  width: 20vw;
+  color: #24BF31;
+}
+
+@media (max-width: 550px) {
+  #features .icon {
+    display: none;
+  }
+}
+
+#features .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 125px;
+  width: 80vw;
+  padding: 5px;
+}
+
+@media (max-width: 550px) {
+  #features .desc {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 150px;
+  }
+}
+
+@media (max-width: 650px) {
+  #features {
+    margin-top: 0;
+  }
+}
+
+#customer-testimonials {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#customer-testimonials > iframe {
+  max-width: 560px;
+  width: 100%;
+}
+
+#pricing {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 10px;
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.product > .level {
+  background-color: #000;
+  color: #24BF31;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.product > h2 {
+  margin-top: 15px;
+}
+
+.product > ol {
+  margin: 15px 0;
+}
+
+.product > ol > li {
+  padding: 5px 0;
+}
+
+.product > button {
+  border: 0;
+  margin: 15px 0;
+  background-color: #f1c40f;
+  font-weight: 400;
+}
+
+.product > button:hover {
+  background-color: #24BF31;
+  transition: background-color 1s;
+}
+
+@media (max-width: 800px) {
+  #pricing {
+    flex-direction: column;
+  }
+  .product {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+footer {
+  margin-top: 30px;
+  background-color: #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+footer > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer > ul > li {
+  padding: 0 10px;
+}
+
+footer > span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #444;
+}
+</style>
+<body>
+    <div id="page-wrapper">
+        <header id="header">
+          <div class="logo">
+            <img id="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-JrIvjoJD447L_DiXAJ8G-fCEvgEzvynzg&usqp=CAU" alt="cat tree logo" />
+          </div>
+      
+          <nav id="nav-bar">
+            <ul>
+              <li><a class="nav-link" href="#features">Features</a></li>
+              <li><a class="nav-link" href="#customer-testimonials">Customer Testimonials</a></li>
+              <li><a class="nav-link" href="#pricing">Pricing</a></li>
+            </ul>
+          </nav>
+        </header>
+      
+        <div class="container"></div>
+      
+        <section id="hero">
+          <h2>Hand-crafted cat trees that scratch every feline itch.</h2>
+          <form id="form" action="https://www.freecodecamp.com/email-submit">
+            <input name="email" id="email" type="email" placeholder="Enter your email address" required />
+            <input id="submit" type="submit" value="Get Started" class="btn" />
+          </form>
+        </section>
+      
+        <d class="container">
+          <section id="features">
+            <div class="grid">
+              <div class="icon"><i class="fa fa-3x fa-tree"></i></div>
+              <div class="desc">
+                <h2>Quality Materials</h2>
+                <p>
+                  Our cat trees use high quality, sustainable materials that are sourced locally, ensuring the longevity of your investment while also shrinking your carbon footprint.
+                </p>
+              </div>
+            </div>
+            <div class="grid">
+              <div class="icon"><i class="fa fa-3x fa-truck"></i></div>
+              <div class="desc">
+                <h2>Fast Shipping</h2>
+                <p>
+                  We make sure you recieve your cat tree as soon as all parts pass our quality inspection tests. We also provide free returns if you are not satisfied with your purchase.
+                </p>
+              </div>
+            </div>
+            <div class="grid">
+              <div class="icon">
+                <i class="fa fa-3x fa-clipboard" aria-hidden="true"></i>
+              </div>
+              <div class="desc">
+                <h2>Quality Assurance</h2>
+                <p>
+                  For every purchase you make, we assemble all parts on location to ensure there are no defects or integrity issues. We want your furry family members to feel safe too!
+                </p>
+              </div>
+            </div>
+          </section>
+          <section id="customer-testimonials">
+              <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/--aHWYNmeDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </section>
+          <section id="pricing">
+            <div class="product" id="jungle-baskets">
+              <div class="level">Jungle Baskets</div>
+              <h2>$200</h2>
+              <img class="junglebaskets" src="https://cdn.shopify.com/s/files/1/0032/6136/6318/files/Main-Modern-cat-furniture-for-mobile-new_3b8157ec-8b00-4e30-96ca-1cdc00312dfa_2000x.jpg?v=1626388072" width="100%" height="325px" />
+              <button class="btn">Select</button>
+            </div>
+            <div class="product" id="cedar-condo">
+              <div class="level">Cedar Condo</div>
+              <h2>$500</h2>
+              <img class="cedarcondo" src="https://secure.img1-fg.wfcdn.com/im/51552832/resize-h755-w755%5Ecompr-r85/1325/132524020/47.2%22+Modern+Cat+Tree+Wooden+Multi-Level+Cat+Tower%2C+Deeper+Version+Of+Cat+Sky+Castle+With+2+Cozy+Condos%2C+Luxury+Perch+And+Interactive+Dangling+Balls+Beige.jpg" width="100%" height="325px" />
+              <button class="btn">Select</button>
+            </div>
+            <div class="product" id="maple-mansion">
+              <div class="level">Maple Mansion</div>
+              <h2>$1100</h2>
+              <img class="maplemansion" src="https://meow.af/wp-content/uploads/2021/01/16-3.png" width="100%" height="325px" />
+              <button class="btn">Select</button>
+            </div>
+      
+          </section>
+          <footer>
+            <ul>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <span>Copyright 2021, CatTree</span>
+          </footer>
+        </div>
+      </div>
+</body>
